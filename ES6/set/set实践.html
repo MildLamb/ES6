@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set实践</title>
+    <script>
+        window.onload = function () {
+            let arr = [1,2,3,4,5,4,3,2,1,7];
+            // 1. 数组去重
+            // let newArr = [...new Set(arr)];
+
+            // 2. 交集
+            let arr2 = [1,3,4,5,6];
+            /*let result = [...new Set(arr)].filter((item) => {
+                let s2 = new Set(arr2);
+                if (s2.has(item)){
+                    return true
+                } else {
+                    return false;
+                }
+                console.log(item);
+            });*/
+
+            // console.log(result,typeof result);
+
+            /**
+             * 高级省略版
+             * @type {number[]}
+             */
+            let result2 = [...new Set(arr)].filter((item) => ((new Set(arr2)).has(item)));
+            console.log(result2);
+
+            // 并集
+            let union = new Set([...arr,...arr2]);
+            console.log(union);
+
+            // 差集
+            let result3 = [...new Set(arr)].filter((item) => !((new Set(arr2)).has(item)));
+            console.log(result3);
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

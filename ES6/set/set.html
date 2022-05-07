@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set集合</title>
+    <script>
+        // 声明一个set
+        let s = new Set();
+        let s2 = new Set(["kindred","gnar","neeko","kindred"]);
+        console.log(s2);
+
+        // 查询集合个数
+        console.log(s2.size);
+        // 添加新元素
+        s2.add("QSJ");
+        console.log(s2);
+        // 删除元素
+        s2.delete("QSJ");
+        console.log(s2);
+        // 查询是否有某个元素
+        console.log(s2.has("kindred"));
+        // 清空集合元素
+/*        s2.clear();
+        console.log(s2);*/
+        // 遍历集合
+        for (let v of s2){
+            console.log(v);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map集合</title>
+    <script>
+        window.onload = function () {
+            // 声明 Map
+            let m = new Map();
+
+            // 添加元素
+            m.set("name","kindred");
+            m.set("age",1500);
+            let skill = {intro: "技能介绍"};
+            m.set(skill,["Q","W","E","R"]);
+
+            // map 的 键的个数
+            console.log(m.size);
+
+            // 删除某个键
+            // m.delete("name");
+
+            // 通过键获取值
+            console.log(m.get(skill));
+
+            // 清空map
+            // m.clear();
+
+            // 遍历map集合
+            for(let v of m){
+                console.log(v);
+            }
+
+            console.log(m);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
