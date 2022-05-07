@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成器函数</title>
+    <script>
+        // 生成器其实就是一个特殊函数
+        /**
+         * - 生成器函数无法通过函数()的方式直接调用
+         * - yield 可以看作为函数代码的分隔符
+         * - 生成器函数通过next方法调用，方法的返回值就是yield后的对象
+         * @returns {Generator<*, void, ?>}
+         */
+        window.onload = function () {
+            function * func() {
+                console.log("Hello");
+                yield 123;
+                console.log("World");
+                yield 'gnar';
+                console.log("!!!");
+                yield 'neeko';
+                console.log("===");
+            }
+
+            // 生成器函数无法通过函数()的方式直接调用
+            let x = func();
+
+            // let result = x.next();
+            // console.log(result);
+            // x.next();
+            // x.next();
+            console.log(x.next());
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

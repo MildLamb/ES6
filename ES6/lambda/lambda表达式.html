@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lambda</title>
+    <script>
+/*        let func = (x,y) => {
+            return x + y;
+        };
+
+        alert(func(1,9));*/
+
+        /**
+         * 特点：
+         *  1. this是静态的，this始终是指向函数声明时所在作用域下的this的值
+         */
+
+        /**
+         * 2. 不能作为构造函数实例化对象
+         */
+
+        /**
+         * 不能使用 arguments 变量
+         */
+/*        let func2 = (x,y) => {
+            let z = 100;
+            // console.log(arguments);
+            console.log(z);
+        };
+        func2(1,10);*/
+
+        /**
+         * 测试lambda的this
+         */
+        window.onload = function() {
+            let num = 10;
+            let obj = {
+                name: "my_friends",
+                roles: [
+                    "kindred",
+                    "gnar",
+                    "neeko"
+                ],
+                func: () => {
+                    return this.roles;
+                }
+            };
+
+            alert(obj.func());
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

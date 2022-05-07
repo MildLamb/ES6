@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol内置值</title>
+    <script>
+        window.onload = function(){
+            class Person{
+                static [Symbol.hasInstance](){
+                    console.log("检测类型");
+                }
+            }
+
+            let obj = {};
+            console.log(obj instanceof Person);
+
+            let arr = [1,2,3];
+            let arr2 = [4,5,6];
+            arr2[Symbol.isConcatSpreadable] = 0; //也可以写false，表示数组不可以扩展，将作为一个整体
+            console.log(arr.concat(arr2));
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

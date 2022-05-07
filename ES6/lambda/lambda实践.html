@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实践</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            /**
+             * 实验1 点击方块变色
+             */
+            let box = document.getElementById("box");
+            box.addEventListener("click",function () {
+                setTimeout(() => {
+                    this.style.backgroundColor = "pink";
+                },2000)
+            });
+
+            /**
+             * 实验2 从数组中返回偶数元素
+             */
+            const arr = [1,3,5,4,6,14,16,17];
+            let result = array => {
+                let temp = [];
+                for (let i = 0;i < array.length;i++){
+                    if (array[i] % 2 == 0) {
+                        temp.push(array[i]);
+                    }
+                }
+                return temp;
+            };
+            console.log(result(arr));
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

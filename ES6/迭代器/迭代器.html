@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代器</title>
+    <script>
+        /**
+         * forin只是遍历属性的，forof是遍历迭代器的
+         */
+        window.onload = function () {
+            let arrs = ["kindred","gnar","neeko","QSJ"];
+
+/*            let role = {
+                name: "kindred",
+                age: 1500,
+                gender: "女"
+            };*/
+
+            for(let arr in arrs){
+                console.log(arr);
+            }
+
+            let iterator = arrs[Symbol.iterator]();
+            console.log(iterator.next());
+            console.log(iterator.next());
+            console.log(iterator.next());
+            console.log(iterator.next());
+            console.log(iterator.next());
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

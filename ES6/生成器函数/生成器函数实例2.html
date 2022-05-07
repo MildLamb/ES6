@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成器函数实例2</title>
+    <script>
+        // window.onload = function () {
+            // 模拟依次获取  用户数据 订单数据 商品数据
+            function getUsers() {
+                setTimeout(()=>{
+                    let data = "用户数据";
+                    start.next(data);
+                },1000);
+            }
+
+            function getOrders() {
+                setTimeout(() => {
+                    let data = "订单数据";
+                    start.next(data);
+                },1000);
+            }
+
+            function getGoods() {
+                setTimeout(() => {
+                    let data = "商品数据";
+                    start.next(data);
+                },1000)
+            }
+
+            function * f() {
+                let data = yield getUsers();
+                console.log(data);
+                let data2 = yield getOrders();
+                console.log(data2);
+                let data3 = yield getGoods();
+                console.log(data3);
+            }
+
+            let start = f();
+            start.next();
+        // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

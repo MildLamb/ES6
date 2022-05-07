@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成器函数参数传递</title>
+    <script>
+        window.onload = function () {
+            function * func(arg) {
+
+                console.log(arg);
+                let out = yield 111;
+                console.log(out);
+                let out2 = yield 222;
+                console.log(out2);
+                let out3 = yield 333;
+                console.log(out3);
+            }
+
+            let it = func("AAA");
+            console.log(it.next());
+            /**
+             * 第二次调用next方法所传递的实参，将作为第一个yield整体的返回结果,以此类推
+             */
+            console.log(it.next("BBB"));
+            console.log(it.next("CCC"));
+            console.log(it.next("DDD"));
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

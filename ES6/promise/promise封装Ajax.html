@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise封装Ajax</title>
+    <script>
+        window.onload = function () {
+
+            // 使用promise封装
+            const p = new Promise((resolve,reject) => {
+
+
+
+            // 1. 创建对象
+            const xhr = new XMLHttpRequest();
+
+            // 2. 初始化
+            xhr.open("GET","https://api.apiopen.top/api/getTime");
+
+            // 3. 发送
+            xhr.send();
+
+            // 绑定事件，处理响应结果
+            xhr.onreadystatechange = function () {
+                // 判断
+                if (xhr.readyState === 4){
+                    // 判断响应状态码
+                    if (xhr.status >= 200 && xhr.status <= 300){
+                        // 如果成功，则修改Promise的状态为成功，就是调用resolve
+                        resolve(xhr.response);
+                    } else {
+                        // 如果失败，则修改Promise的状态为失败，就是调用reject
+                        reject(xhr.status);
+                    }
+                }
+            }
+
+            });
+
+            p.then(function (value) {
+                console.log(value);
+            },function (reason) {
+                console.log(reason);
+            })
+}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+    <script>
+        // 声明变量
+        let a;
+        let b,c,d;
+        let e = 100;
+        let f = 521,g = 'iloveyou',h = [];
+
+        //1. 变量不能重复声明
+        // let star = 'kindred';
+        // let star = 'gnar';
+
+        //2. 块级作用域
+        {
+            let name = 'neeko';
+        }
+       alert(name);
+
+        //3. 不存在变量提升
+        // console.log(msg);
+        // let msg = 'gnardada';
+
+        //4. 不影响作用域链
+        {
+            let school = '德玛西亚';
+            function f1() {
+                console.log(school);
+            }
+            f1();
+        }
+    </script>
+</body>
+</html>

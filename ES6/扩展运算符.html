@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展运算符</title>
+    <script>
+        window.onload = function () {
+            // ... 扩展运算符，可以将数组转换为逗号分隔的参数序列
+            const members = ["kindred", "gnar", "neeko"];
+            const master = ["QSJ"];
+            let show = (...args) => {
+                console.log(args);
+            };
+            /**
+             * 不加... 表示将数组作为一个整体当作参数
+             * 加了... 表示将数组中的每个元素作为参数传递
+             */
+            // show(...members);
+
+            /**
+             * 实验1 合并两个数组元素作为参数
+             */
+            show(...members, ...master);
+
+            /**
+             * 实验2 数组的克隆
+             */
+            const a = [...master]
+            console.log(a);
+
+            /**
+             * 将类数组转换为真正的数组
+             */
+            const divs = document.querySelectorAll("div");
+            const divArr = [...divs];
+            console.log(divArr);
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

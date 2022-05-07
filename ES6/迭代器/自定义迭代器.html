@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义迭代器</title>
+    <script>
+        window.onload = function(){
+            let friends = {
+                name: "my_friends",
+                roles: [
+                    "kindred",
+                    "gnar",
+                    "neeko"
+                ],
+                [Symbol.iterator](){
+                    let index = 0;
+                    return {
+                        next: () => {
+                            console.log(this);
+                            if (index < this.roles.length) {
+                                const result = {value: this.roles[index],done: false};
+                                index++;
+                                return result;
+                            }else {
+                                return {value: undefined,done: true}
+                            }
+                        }
+                    };
+                }
+            };
+
+            for(let friend of friends){
+                console.log(friend);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

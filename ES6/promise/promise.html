@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+    <script>
+        window.onload = function () {
+            /**
+             * 实例化Promise对象
+             */
+            let p = new Promise(function (resolve,reject) {
+               setTimeout(()=>{
+                   // 成功 resolve
+                   /*let data = "用户数据";
+                   resolve(data);*/
+
+                   // 失败
+                   let err = "数据读取失败";
+                   reject(err);
+               },2000);
+            });
+
+
+            // 调用 promise 对象的 then 方法
+            p.then(function (value) {
+                console.log(value);
+            },function (reason) {
+                console.log(reason);
+            })
+
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

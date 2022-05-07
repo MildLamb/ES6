@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成器函数实例</title>
+    <script>
+        window.onload = function() {
+            /**
+             * 一秒后输出111，2秒后输出222，三秒后输出333
+             */
+            function one() {
+                setTimeout(()=>{
+                    console.log(111);
+                    it.next();
+                },1000);
+            }
+            function two() {
+                setTimeout(()=>{
+                    console.log(222);
+                    it.next();
+                },2000);
+            }
+            function three() {
+                setTimeout(()=>{
+                    console.log(333);
+                    it.next();
+                },3000);
+            }
+            
+            
+            function * f() {
+                yield one();
+                yield two();
+                yield three();
+            }
+            
+            let it = f();
+            it.next();
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
