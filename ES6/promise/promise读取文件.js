@@ -13,7 +13,7 @@ fs.readFile("../test.md",(err,data)=>{
 
 // 3. 使用 promise 封装
 const p = new Promise(function (resolve,reject) {
-    fs.readFile("../test.md",(err,data)=>{
+    fs.readFile("../Test_Resource/test.md",(err,data)=>{
         // 如果失败抛出异常
         if (err) reject(err);
         // 如果成功
