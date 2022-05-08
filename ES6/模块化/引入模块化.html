@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引入模块化</title>
+    <script type="module">
+        /**
+         * 通用的模块化导入方式
+         */
+        /*import * as res from "./module1.js";
+        console.log(res);
+
+        // 引入module2中的内容
+        import * as res2 from "./module2.js";
+        console.log(res2);
+        res2.skill();  // 非默认暴露，可以直接使用
+
+        // 引入modeule3的内容
+        import * as res3 from "./module3.js";
+        console.log(res3);
+        res3.default.skill();  // 默认暴露还需要添加.default*/
+
+        /**
+         * 解构赋值形式
+         *  直接通过相同的属性名的形式到对应的模块中提取
+         *  当出现模块属性重名的时候，可以使用as来起一个别名
+         */
+        import {role,skill} from "./module2.js";
+        import {role as role2,skill as skill2} from "./module1.js";
+        // 默认暴露需要起别名
+        import {default as m3} from "./module3.js";
+        console.log(role);
+        console.log(skill);
+        console.log(role2);
+        console.log(skill2);
+        console.log(m3);
+
+        /**
+         * 简便形式 只针对默认暴露
+         */
+        import res3 from "./module3.js";
+        console.log(res3);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

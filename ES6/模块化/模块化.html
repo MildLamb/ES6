@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块化</title>
+    <script type="module">
+
+            /**
+             * 模块化的好处：
+             *  1. 防止命名冲突
+             *  2. 代码复用
+             *  3. 高维护性
+             */
+
+            /**
+             * ES6模块化语法
+             * 模块化功能主要由两个命令构成：export和import
+             * - export命令用于规定模块化的对外接口
+             * - import命令用于输入其他模块提供的功能
+             */
+            // 引入module1中的内容，记得script的type为module
+            // 不能写在window.onload 里面
+
+            import * as res from "./module1.js";
+            console.log(res);
+
+            // 引入module2中的内容
+            import * as res2 from "./module2.js";
+            console.log(res2);
+            res2.skill();  // 非默认暴露，可以直接使用
+
+            // 引入modeule3的内容
+            import * as res3 from "./module3.js";
+            console.log(res3);
+            res3.default.skill();  // 默认暴露还需要添加.default
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
