@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class类</title>
+    <script>
+        // 类对象
+        function Phone(brand,price) {
+            this.brand = brand;
+            this.price = price;
+        }
+
+        // 添加方法
+        Phone.prototype.call = function () {
+            console.log("我可以打电话!!");
+        };
+
+        // 实例化对象
+        let Oppo = new Phone("Oppo",1688);
+
+        console.log(Oppo);
+        Oppo.call();
+
+
+        // ES6 class
+        class Phone2 {
+            // 构造方法 名字不能修改
+            constructor(brand,price) {
+                this.brand = brand;
+                this.price = price;
+            }
+
+            call(){
+                console.log("我是一个手机");
+            }
+        }
+
+        let OppoPlus = new Phone2("OppoPlus",1799);
+        OppoPlus.call();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

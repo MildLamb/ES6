@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class静态成员</title>
+    <script>
+        window.onload = function () {
+            /**
+             * 实例对象与函数对象的属性，方法是互不相通的
+             * 实例对象与函数的原型对象是相通的，即 .prototype
+             */
+            function Phone() {
+
+            }
+            Phone.name = "手机";  // 函数对象的属性
+            Phone.change = function () {
+                console.log("高科技玩意");
+            };
+
+            Phone.prototype.price = 3699;  // 函数原型对象的属性
+
+            let nokia = new Phone();
+            console.log(nokia.name);
+            console.log(nokia.price);
+
+
+            class Phone2{
+                static name2 = "手机";
+                static change2(){
+                    console.log("高科技玩意");
+                };
+            }
+
+            console.log(Phone2.name2);
+            Phone2.change2();
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

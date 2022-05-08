@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数继承</title>
+    <script>
+        window.onload = function () {
+            // 类对象
+            function Phone(brand,price) {
+                this.brand = brand;
+                this.price = price;
+            }
+
+            // 添加方法
+            Phone.prototype.tell = function () {
+                console.log("我可以打电话!!");
+            };
+
+            // 子类对象
+            function SmartPhone(brand,price,color,size) {
+                Phone.call(this,brand,price);   // 这里的this指向 SmartPhone的实例对象
+                this.color = color;
+                this.size = size;
+            }
+
+            // 设置子级构造函数的原型
+            SmartPhone.prototype = new Phone;
+
+            // 声明子类的方法
+            SmartPhone.prototype.photo = function () {
+                console.log("我可以拍照");
+            };
+
+            SmartPhone.prototype.playGame = function () {
+              console.log("我可以玩游戏");
+            };
+
+            const chuizi = new SmartPhone("锤子",3999,"红色","5.5inch");
+            console.log(chuizi);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

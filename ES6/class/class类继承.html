@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class类继承</title>
+    <script>
+        window.onload = function () {
+            // 父类
+            class Phone{
+                // 构造方法
+                constructor(brand,price) {
+                    this.brand = brand;
+                    this.price = price;
+                }
+
+                // 方法
+                tell(){
+                    console.log("我是一个手机");
+                }
+            }
+
+            class SmartPhone extends Phone{
+                // 子类构造方法
+                constructor(brand,price,color,size) {
+                    super(brand,price);
+                    this.color = color;
+                    this.size = size;
+                }
+
+                photo(){
+                    console.log("我可以照相");
+                }
+
+                playGame(){
+                    console.log("我可以玩游戏");
+                }
+
+                tell(){
+                    super.tell();
+                    console.log("我是智能手机，我能视频通话");
+                }
+            }
+
+
+            let xiaomi = new SmartPhone("小米",5999,"蓝色","5.6inch");
+            console.log(xiaomi);
+            xiaomi.tell();
+        };
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

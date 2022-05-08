@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法扩展</title>
+    <script>
+        window.onload = function () {
+            /**
+             * 1. Object.is 判断两个值是否完全相等
+             */
+            console.log(Object.is(NaN,NaN));  // true
+            console.log(NaN === NaN);  // false
+
+            /**
+             * 2. Object.assign 对象的合并
+             */
+            const obj1 = {
+                name: "kindred",
+                age: 1500,
+                gender: "女",
+                level: 7
+            };
+
+            const obj2 = {
+                name: "gnar",
+                age: 8,
+                gender: "公",
+                weapon: "回力镖"
+            };
+            // 以第一个参数对象为模板，把第二个对象中的属性进行替换
+            // 一个中有的另一个没有的都会添加进去
+            console.log(Object.assign(obj1,obj2));
+
+            /**
+             * 3. Object.setPrototypeOf 设置原型对象
+             */
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
